@@ -1,0 +1,19 @@
+import { useState } from 'react';
+import axios from 'axios';
+import {
+  recipeRequest,
+  recipeRequestSuccess,
+  recipeRequestFailure
+} from '../actions/index';
+
+const fetchRecipes = () => dispatch => {
+  const [error, setError] = useState(null);
+  const url = '';
+  dispatch(recipeRequest);
+  axios.get(url, {
+    method: 'GET',
+    mode: 'cors',
+  })
+};
+
+export default fetchRecipes;
