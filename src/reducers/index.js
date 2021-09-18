@@ -3,7 +3,7 @@ import recipesReducer from './recipesReducer';
 // import filterReducer from './filterReducer';
 
 const rootReducer = combineReducers({
-  recipe: recipesReducer,
+  recipesReducer,
 });
 
 export default rootReducer;
