@@ -8,7 +8,7 @@ import {
 
 const fetchRecipes = () => dispatch => {
   // const [error, setError] = useState(null);
-  const url = '';
+  const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=b';
   dispatch(httpRequest);
   axios.get(url, {
     method: 'GET',
