@@ -1,5 +1,5 @@
 import classes from './App.module.css';
-import Routes from './routes';
+import Routes from './Routes';
 
 const App = () => (
   <div className={classes.App}>
@@ -8,4 +8,3 @@ const App = () => (
 );
 
 export default App;
-
