@@ -1,0 +1,28 @@
+// import { useState } from 'react';
+import axios from 'axios';
+import {
+  httpRequest,
+  httpRequestSuccess,
+  httpRequestFailure
+} from '../actions/index';
+
+const fetchRecipes = () => dispatch => {
+  // const [error, setError] = useState(null);
+  const url = '';
+  dispatch(httpRequest);
+  axios.get(url, {
+    method: 'GET',
+    // mode: 'cors',
+  })
+  .then(response => {
+    console.log(response.data);
+    const res = response.data;
+    dispatch(httpRequestSuccess(res));
+  })
+  .catch(error => {
+    const errorMsg = error.message;
+    dispatch(httpRequestFailure(errorMsg));
+  });
+};
+
+export default fetchRecipes;
