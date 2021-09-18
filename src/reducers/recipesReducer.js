@@ -21,12 +21,14 @@ const recipesReducer = (state = initialState, action) => {
       };
     case FETCH_SUCCESS:
       return {
+        ...state,
         loading: false,
         meals: action.payload,
         error: '',
       };
     case FETCH_FAILURE:
       return {
+        ...state,
         loading: false,
         meals: {},
         error: action.payload,

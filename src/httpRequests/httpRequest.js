@@ -3,10 +3,10 @@ import axios from 'axios';
 import {
   httpRequest,
   httpRequestSuccess,
-  httpRequestFailure
+  httpRequestFailure,
 } from '../actions/index';
 
-const fetchRecipes = () => dispatch => {
+const fetchRecipes = () => (dispatch) => {
   // const [error, setError] = useState(null);
   const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=b';
   dispatch(httpRequest);
@@ -14,15 +14,15 @@ const fetchRecipes = () => dispatch => {
     method: 'GET',
     // mode: 'cors',
   })
-  .then(response => {
-    console.log(response.data);
-    const res = response.data;
-    dispatch(httpRequestSuccess(res));
-  })
-  .catch(error => {
-    const errorMsg = error.message;
-    dispatch(httpRequestFailure(errorMsg));
-  });
+    .then((response) => {
+      console.log(response.data);
+      const res = response.data;
+      dispatch(httpRequestSuccess(res));
+    })
+    .catch((error) => {
+      const errorMsg = error.message;
+      dispatch(httpRequestFailure(errorMsg));
+    });
 };
 
 export default fetchRecipes;
