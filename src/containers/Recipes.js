@@ -1,25 +1,25 @@
-import { useSelector, useDispatch } from 'react';
-import fetchRecipes from '../httpRequests/httpRequest';
-import RecipeFilter from '../components/RecipeFilter';
-import { filterRecipes } from '../actions';
+// import RecipeFilter from '../components/RecipeFilter';
+// import { filterRecipes } from '../actions';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Recipe from '../components/Recipe';
+// import { httpRequest } from '../actions';
+import fetchRecipes from '../httpRequests/httpRequest';
 
 const Recipes = () => {
-  //const dispatch = useDispatch();
+  const recipes = useSelector((state) => state.meals);
+  const filtered = useSelector((state) => state.filter);
+  const dispatch = useDispatch();
+  console.log(recipes);
+  console.log(filtered);
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-    dispatch(fetchRecipes(foods2));
+    dispatch(fetchRecipes());
   }, []);
-
-  content = <Recipe />;
 
   return (
     <div>
-      {loading && <div>Loading...</div>}
-      {!loading && content}
+      <Recipe />
     </div>
   );
 };

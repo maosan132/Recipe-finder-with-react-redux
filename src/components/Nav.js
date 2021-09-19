@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import classes from '../styles/Nav.module.css';
-import logo from '../assets/logo.png';
+import classes from './Nav.module.css';
+// import logo from '../assets/logo.png';
 
 const Nav = () => (
   <nav className={classes.nav}>
     <h2 className={classes.logo}>
       <Link to="/">
-        <img src={logo} alt={logo} />
+        {/* <img src={logo} alt={logo} /> */}
       </Link>
       Catalogue Of Recipes
     </h2>

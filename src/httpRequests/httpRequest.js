@@ -6,23 +6,17 @@ import {
   httpRequestFailure,
 } from '../actions/index';
 
-const fetchRecipes = () => (dispatch) => {
-  // const [error, setError] = useState(null);
-  const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=b';
-  dispatch(httpRequest);
-  axios.get(url, {
-    method: 'GET',
-    // mode: 'cors',
-  })
-    .then((response) => {
-      console.log(response.data);
-      const res = response.data;
-      dispatch(httpRequestSuccess(res));
-    })
-    .catch((error) => {
-      const errorMsg = error.message;
-      dispatch(httpRequestFailure(errorMsg));
-    });
+const fetchRecipes = () => async (dispatch) => {
+  try {
+    const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=b';
+    dispatch(httpRequest);
+    const request = await axios.get(url);
+    const res = request.data;
+    // console.log(res);
+    dispatch(httpRequestSuccess(res));
+  } catch (error) {
+    dispatch(httpRequestFailure(error));
+  }
 };
 
 export default fetchRecipes;
