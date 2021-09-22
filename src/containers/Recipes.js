@@ -7,11 +7,11 @@ import Recipe from '../components/Recipe';
 import fetchRecipes from '../httpRequests/httpRequest';
 
 const Recipes = () => {
-  const recipes = useSelector((state) => state.meals);
+  const recipes = useSelector((state) => state.recipes.meals);
   const filtered = useSelector((state) => state.filter);
   const dispatch = useDispatch();
-  console.log(recipes);
-  console.log(filtered);
+
+  console.log('store', recipes, filtered);
 
   useEffect(() => {
     dispatch(fetchRecipes());
