@@ -5,9 +5,7 @@ import {
 } from '../actions/constants';
 
 const initialState = {
-  recipes: {
-    meals: [],
-  },
+  meals: [],
   loading: false,
   error: '',
 };
