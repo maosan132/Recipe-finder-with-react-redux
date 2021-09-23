@@ -14,12 +14,8 @@ const RecipeFilter = ({ handleFilter, recipes }) => {
   }
 
   const handleClick = (e) => {
-    const { value } = e.target.value;
-    if (value === 'All') {
-      handleFilter('All');
-    } else {
-      handleFilter(value);
-    }
+    const { value } = e.target;
+    handleFilter(value);
   };
 
   return (

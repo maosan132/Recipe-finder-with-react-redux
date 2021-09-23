@@ -1,9 +1,10 @@
+/* eslint-disable */
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import Recipe from '../components/Recipe';
+import Recipe from '../components/Recipe';
 import fetchRecipes from '../httpRequests/httpRequest';
-// import RecipeFilter from '../components/RecipeFilter';
-// import { filterRecipes } from '../actions';
+import RecipeFilter from '../components/RecipeFilter';
+import { filterRecipes } from '../actions';
 
 const Recipes = () => {
   // state.recipe.meals.meals
@@ -12,7 +13,8 @@ const Recipes = () => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
 
-  // dispatch(fetchRecipes());
+  const [displayData, setDisplayData] = useState([]);
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -24,29 +26,29 @@ const Recipes = () => {
   console.log('recipe type:', typeof recipesData);
   console.log('recipesData', recipesData);
 
-  // const handleFilterChange = (category) => {
-  //   dispatch(filterRecipes(category.target.value)); // updates filtered state
-  // };
+  const handleFilterChange = (category) => {
+    dispatch(filterRecipes(category));
+  };
 
-  const filteredRecipes = (filter !== null)
-    ? recipesData.filter((r) => r.strCategory === filter)
-    : console.log('no filter');
-
-  console.log('filteredR', typeof filteredRecipes);
-  console.log('filter', filteredRecipes);
+  useEffect(() => {
+    if (filter) {
+      setDisplayData(recipesData?.filter((r) => r.strCategory === filter) || [])
+    } else {
+      setDisplayData(recipesData);
+    }
+  }, [filter, recipesData?.length])
 
   return (
     <>
-      {/* <RecipeFilter handleFilter={handleFilterChange} recipes={recipesData} />
-      {filteredRecipes.map((r) => (
+      <RecipeFilter handleFilter={handleFilterChange} recipes={recipesData} />
+      {displayData?.map((r) => (
         <Recipe key={r.idMeal} recipe={r} />
-      ))} */}
-      {/* {Loading && <p>Loading...</p>}
-      {!Loading && filteredRecipes.length === 0 && <p>No recipes found</p>}
-      {!Loading && filteredRecipes.length > 0 && (
+      ))}
+      {loading && <p>Loading...</p>}
+      {!loading && displayData.length === 0 && <p>No recipes found</p>}
+      {!loading && displayData.length > 0 && (
         <Recipe recipe={recipesData} /> // recipes hardcoded as object
-      )} */}
-      {}
+      )}
     </>
   );
 };
