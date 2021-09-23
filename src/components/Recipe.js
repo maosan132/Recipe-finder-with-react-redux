@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import classes from './Recipe.module.css';
 
 const Recipe = ({ recipe }) => {
-  const uniqueKey = recipe.idMeal;
-  console.log('tipa', typeof recipe);
+  const identifier = recipe.idMeal;
   return (
     <>
       <div>
@@ -16,7 +15,7 @@ const Recipe = ({ recipe }) => {
       </div>
       <h4>title</h4>
       <button type="button">
-        <Link to={`/recipeInfo/${uniqueKey}`}>
+        <Link className={classes.link} to={`/recipeInfo/${identifier}`}>
           <h4>Recipe Details</h4>
         </Link>
       </button>

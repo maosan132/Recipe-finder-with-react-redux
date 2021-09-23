@@ -9,13 +9,10 @@ export const httpRequest = () => ({
   type: FETCH_REQUEST,
 });
 
-export const httpRequestSuccess = (recipes) => {
-  console.log('action', recipes);
-  return {
-    type: FETCH_SUCCESS,
-    payload: recipes,
-  };
-};
+export const httpRequestSuccess = (recipes) => ({
+  type: FETCH_SUCCESS,
+  payload: recipes,
+});
 
 export const httpRequestFailure = (error) => ({
   type: FETCH_FAILURE,

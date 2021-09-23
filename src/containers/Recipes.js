@@ -8,7 +8,6 @@ import { filterRecipes } from '../actions';
 import Loader from '../components/Loader';
 
 const Recipes = () => {
-  // state.recipe.meals.meals
   const recipesData = useSelector((state) => state.recipe.meals.meals);
   const filter = useSelector((state) => state.filter);
   const dispatch = useDispatch();
@@ -33,7 +32,7 @@ const Recipes = () => {
 
   useEffect(() => {
     if (filter) {
-      setDisplayData(recipesData?.filter((r) => r.strCategory === filter) || [])
+      setDisplayData(recipesData.filter((r) => r.strCategory === filter) || [])
     } else {
       setDisplayData(recipesData);
     }
@@ -44,7 +43,7 @@ const Recipes = () => {
   ) : (
     <div className="recipes">
       <RecipeFilter handleFilter={handleFilterChange} recipes={recipesData} />
-      {displayData?.map((r) => (
+      {displayData.map((r) => (
         <Recipe key={r.idMeal} recipe={r} />
       ))}
     </div>
