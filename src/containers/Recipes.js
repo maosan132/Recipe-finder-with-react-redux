@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Recipe from '../components/Recipe';
+// import Recipe from '../components/Recipe';
 import fetchRecipes from '../httpRequests/httpRequest';
-import RecipeFilter from '../components/RecipeFilter';
-import { filterRecipes } from '../actions';
+// import RecipeFilter from '../components/RecipeFilter';
+// import { filterRecipes } from '../actions';
 
 const Recipes = () => {
   // state.recipe.meals.meals
-  const recipes = useSelector((state) => state.recipe.meals.meals);
-  const filtered = useSelector((state) => state.filter);
+  const recipesData = useSelector((state) => state.recipe.meals.meals);
+  const filter = useSelector((state) => state.filter);
   const dispatch = useDispatch();
-  const [Loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   // dispatch(fetchRecipes());
   useEffect(() => {
@@ -20,31 +20,32 @@ const Recipes = () => {
     dispatch(fetchRecipes());
   }, []);
 
-  console.log(filtered);
-  console.log('meals', recipes);
-  console.log(typeof recipes);
+  console.log(filter, loading);
+  console.log('recipe type:', typeof recipesData);
+  console.log('recipesData', recipesData);
 
-  const handleFilterChange = (category) => {
-    dispatch(filterRecipes(category.target.value)); // updates filtered state
-  };
+  // const handleFilterChange = (category) => {
+  //   dispatch(filterRecipes(category.target.value)); // updates filtered state
+  // };
 
-  const filteredRecipes = (filtered !== 'All')
-    ? recipes.filter((r) => r.strCategory === filtered)
-    : recipes;
+  const filteredRecipes = (filter !== null)
+    ? recipesData.filter((r) => r.strCategory === filter)
+    : console.log('no filter');
 
-  console.log(filteredRecipes);
+  console.log('filteredR', typeof filteredRecipes);
+  console.log('filter', filteredRecipes);
 
   return (
     <>
-      <RecipeFilter handleFilter={handleFilterChange} recipes={recipes} />
+      {/* <RecipeFilter handleFilter={handleFilterChange} recipes={recipesData} />
       {filteredRecipes.map((r) => (
         <Recipe key={r.idMeal} recipe={r} />
-      ))}
-      {Loading && <p>Loading...</p>}
+      ))} */}
+      {/* {Loading && <p>Loading...</p>}
       {!Loading && filteredRecipes.length === 0 && <p>No recipes found</p>}
       {!Loading && filteredRecipes.length > 0 && (
-        <Recipe recipe={{ recipes }} /> // recipes hardcoded as object
-      )}
+        <Recipe recipe={recipesData} /> // recipes hardcoded as object
+      )} */}
       {}
     </>
   );

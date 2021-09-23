@@ -5,7 +5,7 @@ import {
 } from '../actions/constants';
 
 const initialState = {
-  meals: [],
+  meals: {},
   loading: false,
   error: '',
 };
@@ -18,6 +18,7 @@ const recipesReducer = (state = initialState, action) => {
         loading: true,
       };
     case FETCH_SUCCESS:
+      console.log('payload', action.payload);
       return {
         ...state,
         loading: false,
