@@ -5,6 +5,7 @@ import Recipe from '../components/Recipe';
 import fetchRecipes from '../httpRequests/httpRequest';
 import RecipeFilter from '../components/RecipeFilter';
 import { filterRecipes } from '../actions';
+import Loader from '../components/Loader';
 
 const Recipes = () => {
   // state.recipe.meals.meals
@@ -38,16 +39,20 @@ const Recipes = () => {
     }
   }, [filter, recipesData?.length])
 
+  const content = loading ? (
+    <Loader />
+  ) : (
+    <div className="recipes">
+      <RecipeFilter handleFilter={handleFilterChange} recipes={recipesData} />
+      {displayData?.map((r) => (
+        <Recipe key={r.idMeal} recipe={r} />
+      ))}
+    </div>
+  );
+
   return (
     <>
-      <RecipeFilter handleFilter={handleFilterChange} recipes={recipesData} />
-      {loading && <p>Loading...</p>}
-      {!loading && displayData.length === 0 && <p>No recipes found</p>}
-      {!loading && displayData.length > 0 && (
-        displayData?.map((r) => (
-          <Recipe key={r.idMeal} recipe={r} />
-        ))
-      )}
+      {content}
     </>
   );
 };
