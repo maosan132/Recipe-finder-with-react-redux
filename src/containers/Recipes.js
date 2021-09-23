@@ -41,13 +41,12 @@ const Recipes = () => {
   return (
     <>
       <RecipeFilter handleFilter={handleFilterChange} recipes={recipesData} />
-      {displayData?.map((r) => (
-        <Recipe key={r.idMeal} recipe={r} />
-      ))}
       {loading && <p>Loading...</p>}
       {!loading && displayData.length === 0 && <p>No recipes found</p>}
       {!loading && displayData.length > 0 && (
-        <Recipe recipe={recipesData} /> // recipes hardcoded as object
+        displayData?.map((r) => (
+          <Recipe key={r.idMeal} recipe={r} />
+        ))
       )}
     </>
   );
