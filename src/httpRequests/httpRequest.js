@@ -12,6 +12,7 @@ const fetchRecipes = () => async (dispatch) => {
     dispatch(httpRequest);
     const request = await axios.get(url);
     const res = request.data;
+    console.log('res', res);
     dispatch(httpRequestSuccess(res));
   } catch (error) {
     dispatch(httpRequestFailure(error));
