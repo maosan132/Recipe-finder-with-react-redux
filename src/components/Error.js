@@ -2,7 +2,7 @@ import React from 'react';
 
 const Error = () => (
   <div>
-    errors
+    <h1 style={{ color: 'red' }}>Oops! Page not found!</h1>
   </div>
 );
 
