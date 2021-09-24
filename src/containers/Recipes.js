@@ -22,10 +22,6 @@ const Recipes = () => {
     dispatch(fetchRecipes());
   }, []);
 
-  console.log(filter, loading);
-  console.log('recipe type:', typeof recipesData);
-  console.log('recipesData', recipesData);
-
   const handleFilterChange = (category) => {
     dispatch(filterRecipes(category));
   };

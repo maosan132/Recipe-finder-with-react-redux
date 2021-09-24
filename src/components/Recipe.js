@@ -13,7 +13,7 @@ const Recipe = ({ recipe }) => {
           alt={recipe.strMeal}
         />
       </div>
-      <h4>title</h4>
+      <h4>{recipe.strMeal}</h4>
       <button type="button">
         <Link className={classes.link} to={`/recipeInfo/${identifier}`}>
           <h4>Recipe Details</h4>
