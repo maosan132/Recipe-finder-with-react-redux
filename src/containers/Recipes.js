@@ -6,6 +6,8 @@ import fetchRecipes from '../httpRequests/httpRequest';
 import RecipeFilter from '../components/RecipeFilter';
 import { filterRecipes } from '../actions';
 import Loader from '../components/Loader';
+import CardGroup from 'react-bootstrap/CardGroup';
+import Row from 'react-bootstrap/Row';
 
 const Recipes = () => {
   const recipesData = useSelector((state) => state.recipe.meals.meals);
@@ -39,9 +41,13 @@ const Recipes = () => {
   ) : (
     <div className="recipes">
       <RecipeFilter handleFilter={handleFilterChange} recipes={recipesData} />
-      {displayData.map((r) => (
-        <Recipe key={r.idMeal} recipe={r} />
-      ))}
+      <CardGroup>
+        {displayData.map((r) => (
+          <Row xs={1} md={2} className="g-4">
+            <Recipe key={r.idMeal} recipe={r} />
+          </Row>
+        ))}
+      </CardGroup>
     </div>
   );
 

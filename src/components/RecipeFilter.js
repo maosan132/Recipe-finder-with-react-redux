@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Form from 'react-bootstrap/Form';
 
 const RecipeFilter = ({ handleFilter, recipes }) => {
   const categories = ['All']; // Start with the All category
@@ -19,26 +20,21 @@ const RecipeFilter = ({ handleFilter, recipes }) => {
   };
 
   return (
-    <>
-      <label htmlFor="select" className="mx-auto my-0">
-        <select
-          name="category"
-          id="select"
-          onChange={handleClick}
-        >
+    <Form>
+      <Form.Group controlId="exampleForm.ControlSelect1" className="mx-auto my-0">
+        <Form.Label htmlFor="select">Filter by category</Form.Label>
+        <Form.Control as="select" id="select" onChange={handleClick}>
           <option disable="true" hidden>
             CATEGORY
           </option>
-          {categories.map(
-            (category) => (
-              <option value={category} key={category}>
-                {category}
-              </option>
-            ),
-          )}
-        </select>
-      </label>
-    </>
+          {categories.map((category) => (
+            <option value={category} key={category}>
+              {category}
+            </option>
+          ))}
+        </Form.Control>
+      </Form.Group>
+    </Form>
   );
 };
 
