@@ -1,0 +1,81 @@
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.heading {
+  padding-top: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+h4 {
+  margin-top: 1rem !important;
+}
+
+.text-info {
+  color: darkred;
+}
+
+strong:after {
+  content: '\0000a0';
+  }
+
+.heading ul {
+  width: 200px;
+  margin: 0 auto;
+  padding-left: 0;
+  text-align: left;
+}
+
+.nobullet li {
+  list-style-type: none;
+}
+
+p {
+  text-align: center;
+  max-width: 80%;
+  margin: auto;
+  opacity: .7;
+  margin-bottom: 1rem;
+}
+
+.source {
+  text-decoration: none;
+  font-size: .8rem;
+  color: darkred;
+  margin-top: 1rem;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin:0 auto;
+  max-height:50%;
+  padding-bottom: 2rem;
+}
+
+image {
+  max-width:400px; /* the largest image width */
+  text-align: center; /* to center images of lesser width */
+  background-size: contain;
+  aspect-ratio: 1/2;
+}
+
+/* media 576px */
+
+@media (max-width: 576px) {
+  .heading {
+    padding-top: 80px;
+  }
+}
+
+/* add media queries for all screen sizes*/

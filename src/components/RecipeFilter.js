@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
+import classes from './RecipeFilter.module.css';
 
 const RecipeFilter = ({ handleFilter, recipes }) => {
   const categories = ['All']; // Start with the All category
@@ -21,9 +22,9 @@ const RecipeFilter = ({ handleFilter, recipes }) => {
 
   return (
     <Form>
-      <Form.Group controlId="exampleForm.ControlSelect1" className="mx-auto my-0">
-        <Form.Label htmlFor="select">Filter by category</Form.Label>
-        <Form.Control as="select" id="select" onChange={handleClick}>
+      <Form.Group className="d-flex justify-content-center p-2">
+        <Form.Label htmlFor="select" className={`${classes.label} align-self-center`}>Select a category: </Form.Label>
+        <Form.Control as="select" id="select" onChange={handleClick} className={`${classes.input} w-25`}>
           <option disable="true" hidden>
             CATEGORY
           </option>

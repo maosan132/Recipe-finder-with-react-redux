@@ -41,10 +41,11 @@ const Recipes = () => {
   ) : (
     <div className="recipes">
       <RecipeFilter handleFilter={handleFilterChange} recipes={recipesData} />
+      {filter}
       <CardGroup>
-        {displayData.map((r) => (
-          <Row xs={1} md={2} className="g-4">
-            <Recipe key={r.idMeal} recipe={r} />
+        {displayData.map((r,i) => (
+          <Row>
+            <Recipe key={i} recipe={r} />
           </Row>
         ))}
       </CardGroup>
