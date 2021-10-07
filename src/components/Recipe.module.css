@@ -1,7 +1,9 @@
 .foodDetails {
-  max-width: 416px;
   padding: 10px;
-  margin-bottom: 20px;
+
+}
+Card {
+  width: "10rem" ;
 }
 
 .imgContainer {

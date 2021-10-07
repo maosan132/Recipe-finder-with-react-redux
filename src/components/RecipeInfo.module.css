@@ -19,8 +19,8 @@ h4 {
   margin-top: 1rem !important;
 }
 
-.text-info {
-  color: darkred;
+.title {
+  color: cadetblue;
 }
 
 strong:after {
@@ -49,12 +49,14 @@ p {
 .source {
   text-decoration: none;
   font-size: .8rem;
-  color: darkred;
+  color: cadetblue;
   margin-top: 1rem;
+  display: block;
+  clear: both;
 }
 
 .imgContainer {
-  display: flex;
+  padding-top: 40px;
   justify-content: center;
   align-items: center;
   margin-top: 40px;
@@ -74,8 +76,17 @@ image {
 
 @media (max-width: 576px) {
   .heading {
-    padding-top: 80px;
+    padding-top: 20px;
   }
 }
 
-/* add media queries for all screen sizes*/
+  /* media 768px */
+
+  @media (min-width: 768px) {
+    .imgContainer {
+      float: left;
+    }
+    .heading {
+      float: right;
+    }
+  }

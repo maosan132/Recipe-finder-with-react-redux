@@ -8,6 +8,7 @@ import { filterRecipes } from '../actions';
 import Loader from '../components/Loader';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Row from 'react-bootstrap/Row';
+import classes from './Recipes.module.css'
 
 const Recipes = () => {
   const recipesData = useSelector((state) => state.recipe.meals.meals);
@@ -41,11 +42,10 @@ const Recipes = () => {
   ) : (
     <div className="recipes">
       <RecipeFilter handleFilter={handleFilterChange} recipes={recipesData} />
-      {filter}
-      <CardGroup>
+      <CardGroup class={classes.group}>
         {displayData.map((r,i) => (
-          <Row>
-            <Recipe key={i} recipe={r} />
+          <Row xs={1} md={2} className="g-2 p-2 center">
+            <Recipe key={r.idMeal} recipe={r} />
           </Row>
         ))}
       </CardGroup>
