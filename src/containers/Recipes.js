@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Recipe from '../components/Recipe';
 import fetchRecipes from '../httpRequests/httpRequest';
-import RecipeFilter from '../components/RecipeFilter';
 import { filterRecipes } from '../actions';
+import RecipeFilter from '../components/RecipeFilter';
 import Loader from '../components/Loader';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Row from 'react-bootstrap/Row';
@@ -15,6 +15,7 @@ const Recipes = () => {
   const filter = useSelector((state) => state.filter);
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
+  console.log(filter);
 
   const [displayData, setDisplayData] = useState([]);
 

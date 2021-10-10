@@ -17,8 +17,16 @@ const RecipeFilter = ({ handleFilter, recipes }) => {
 
   const handleClick = (e) => {
     const { value } = e.target;
-    handleFilter(value);
-    console.log(value);
+    console.log(e, value);
+    if (value === 'All') {
+      handleFilter(null);
+    } else {
+      handleFilter(value);
+    }
+  };
+
+  const handleClear = () => {
+    handleFilter(null);
   };
 
   return (
@@ -32,7 +40,7 @@ const RecipeFilter = ({ handleFilter, recipes }) => {
             </option>
           ))}
         </Form.Control>
-        <button type="button">Clear</button>
+        <button type="button" onClick={handleClear}>Clear</button>
       </Form.Group>
     </Form>
   );
