@@ -28,14 +28,6 @@
   }
 }
 
-/* media 778px */
-
-/* @media (max-width: 778px) {
-  .Card {
-    width: 14rem;
-  }
-} */
-
 /* media 1440px */
 
 @media (min-width: 1440px) {
