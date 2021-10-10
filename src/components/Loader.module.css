@@ -13,6 +13,7 @@
   -webkit-animation: spin 0.5s linear infinite; /* Safari */
   animation: spin 0.5s linear infinite;
 }
+
 .p {
   padding-top: 50px;
   font-size: small;

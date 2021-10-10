@@ -17,7 +17,6 @@ const RecipeFilter = ({ handleFilter, recipes }) => {
 
   const handleClick = (e) => {
     const { value } = e.target;
-    console.log(e, value);
     if (value === 'All') {
       handleFilter(null);
     } else {

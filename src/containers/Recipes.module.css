@@ -1,11 +1,11 @@
-Button {
-    background-color: cadetblue;
-    border-radius: 5px;
-    border: none;
-    color: white;
+button {
+  background-color: cadetblue;
+  border-radius: 5px;
+  border: none;
+  color: white;
 }
 
-Button:hover {
+button:hover {
   color: rgb(217, 226, 157);
   background-color: #6ea7a8;
 }

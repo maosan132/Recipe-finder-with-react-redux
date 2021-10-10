@@ -1,5 +1,10 @@
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: .5rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -23,9 +28,9 @@ h4 {
   color: cadetblue;
 }
 
-strong:after {
+strong::after {
   content: '\0000a0';
-  }
+}
 
 .heading ul {
   width: 200px;
@@ -42,31 +47,21 @@ p {
   text-align: center;
   max-width: 80%;
   margin: auto;
-  opacity: .7;
+  opacity: 0.7;
   margin-bottom: 1rem;
 }
 
 .source {
   text-decoration: none;
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: cadetblue;
   margin-top: 1rem;
   display: block;
   clear: both;
 }
 
-.imgContainer {
-  padding-top: 40px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
-  margin:0 auto;
-  max-height:50%;
-  padding-bottom: 2rem;
-}
-
 image {
-  max-width:400px; /* the largest image width */
+  max-width: 400px; /* the largest image width */
   text-align: center; /* to center images of lesser width */
   background-size: contain;
   aspect-ratio: 1/2;
@@ -78,19 +73,20 @@ image {
   .heading {
     padding-top: 20px;
   }
-  Card {
+
+  card {
     width: 22rem;
   }
-
 }
 
-  /* media 768px */
+/* media 768px */
 
-  @media (min-width: 768px) {
-    .imgContainer {
-      float: left;
-    }
-    .heading {
-      float: right;
-    }
+@media (min-width: 768px) {
+  .imgContainer {
+    float: left;
   }
+
+  .heading {
+    float: right;
+  }
+}

@@ -1,5 +1,5 @@
 .Card {
-  width: 16rem ;
+  width: 16rem;
   background-color: rgb(219, 186, 88);
 }
 
@@ -16,8 +16,8 @@
 }
 
 .button:hover {
-color: rgb(217, 226, 157);
-background-color: #6ea7a8;
+  color: rgb(217, 226, 157);
+  background-color: #6ea7a8;
 }
 
 /* media 576px */
