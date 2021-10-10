@@ -18,6 +18,7 @@ const RecipeFilter = ({ handleFilter, recipes }) => {
   const handleClick = (e) => {
     const { value } = e.target;
     handleFilter(value);
+    console.log(value);
   };
 
   return (
@@ -25,15 +26,13 @@ const RecipeFilter = ({ handleFilter, recipes }) => {
       <Form.Group className="d-flex justify-content-center p-2">
         <Form.Label htmlFor="select" className={`${classes.label} align-self-center`}>Select a category: </Form.Label>
         <Form.Control as="select" id="select" onChange={handleClick} className={`${classes.input} w-25`}>
-          <option disable="true" hidden>
-            CATEGORY
-          </option>
           {categories.map((category) => (
             <option value={category} key={category}>
               {category}
             </option>
           ))}
         </Form.Control>
+        <button type="button">Clear</button>
       </Form.Group>
     </Form>
   );

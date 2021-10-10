@@ -11,6 +11,10 @@ nav {
   margin-bottom: 0;
 }
 
+.selectedLink {
+  color: red;
+}
+
 .lists {
   color: white;
   font-size: 1rem;

@@ -78,6 +78,10 @@ image {
   .heading {
     padding-top: 20px;
   }
+  Card {
+    width: 22rem;
+  }
+
 }
 
   /* media 768px */

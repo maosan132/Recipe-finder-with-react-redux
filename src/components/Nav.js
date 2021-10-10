@@ -1,23 +1,33 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import classes from './Nav.module.css';
 // import logo from '../assets/logo.png';
 
 const Nav = () => (
   <nav className={classes.nav}>
     <h2 className={classes.logo}>
-      <Link to="/">
-        {/* <img src={logo} alt={logo} /> */}
-      </Link>
+      <Link to="/">{/* <img src={logo} alt={logo} /> */}</Link>
       Catalogue Of Recipes
     </h2>
     <ul className={classes.navLinks}>
-      <Link className={classes.lists} to="/">
+      <NavLink
+        className={classes.lists}
+        activeStyle={{
+          fontWeight: 'bold',
+        }}
+        to="/"
+      >
         <li>Recipes</li>
-      </Link>
-      <Link className={classes.lists} to="/about">
+      </NavLink>
+      <NavLink
+        className={classes.lists}
+        activeStyle={{
+          fontWeight: 'bold',
+        }}
+        to="/about"
+      >
         <li>About Us</li>
-      </Link>
+      </NavLink>
     </ul>
   </nav>
 );
