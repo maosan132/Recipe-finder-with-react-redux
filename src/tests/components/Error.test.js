@@ -19,6 +19,6 @@ describe('<Error />', () => {
         <Error />
       </Router>,
     );
-    expect(screen.getByText('Oops! Page not found!')).toBeInTheDocument();
+    expect(screen.getByText('Error 404! Page not found!')).toBeInTheDocument();
   });
 });

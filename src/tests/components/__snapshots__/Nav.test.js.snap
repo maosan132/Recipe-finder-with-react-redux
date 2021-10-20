@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Nav /> renders correctly 1`] = `
+<nav
+  className="nav"
+>
+  <h2
+    className="logo"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    />
+    Catalogue Of Recipes
+  </h2>
+  <ul
+    className="navLinks"
+  >
+    <a
+      aria-current="page"
+      className="lists active"
+      href="/"
+      onClick={[Function]}
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      <li>
+        Recipes
+      </li>
+    </a>
+    <a
+      aria-current={null}
+      className="lists"
+      href="/about"
+      onClick={[Function]}
+    >
+      <li>
+        About Us
+      </li>
+    </a>
+  </ul>
+</nav>
+`;
