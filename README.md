@@ -23,13 +23,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a catalogue of recipes. It's a single page application that shows list of food items that can be filtered based on food type. It also shows the details of individual food items.
+This project is a catalogue of recipes. It's a SPA that lists filterable food items. 
 It's built with React and Redux.
-It's also built with an API (Application Programming Interface). The data on the API are obtained, stored on Redux store, and then displayed on the browser through async fetch request.
-It's a SPA application (with both main, show, and About Us pages). These pages are implemented using React's Router feature.
-All the data from the API are displayed on the index page. The API employed here is [themealdb API](https://www.themealdb.com/api.php).
-The details of individual food items are displayed on the show page, and the About Us page tells more about the Catalogue Of Recipes.
-The application throws an error when a user inputs the wrong url on the browser.
+The data on the API are obtained, stored on Redux store, and then displayed on the browser through async fetch request. I also used Redux hooks to manage state data.
+Inner pages are implemented using React's Router.
+The API data is fetched from The Meal DB [themealdb API](https://www.themealdb.com/api.php).
+The details of individual food items are displayed on the show page.
 
 ## Preview
 ![screenshot](./src/assets/app_screenshotx.png)
