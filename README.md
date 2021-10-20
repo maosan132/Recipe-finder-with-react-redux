@@ -32,13 +32,13 @@ The details of individual food items are displayed on the show page, and the Abo
 The application throws an error when a user inputs the wrong url on the browser.
 
 ## Preview
-![screenshot](./app_screenshot.png)
+![screenshot](./assets/app_screenshotx.png)
 
 ## Live Demo
 It's deployed [HERE](https://mv-recipex-catalogue.herokuapp.com/) on heroku
 
 ## Video Presentation
-[![screenshot](./app_screenshot.png)](https://www.youtube.com/watch?v=)
+[![screenshot](./assets/app_screenshotx.png)](https://www.youtube.com/watch?v=)
 
 ### Built With
 This project was built using these technologies.
