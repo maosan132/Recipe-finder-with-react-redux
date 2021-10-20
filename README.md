@@ -38,7 +38,7 @@ The application throws an error when a user inputs the wrong url on the browser.
 It's deployed [HERE](https://mv-recipex-catalogue.herokuapp.com/) on heroku
 
 ## Video Presentation
-[![screenshot](./src/assets/app_screenshotx.png)](https://www.youtube.com/watch?v=)
+[![screenshot](./src/assets/app_screenshot-mini.png)](https://www.youtube.com/watch?v=)
 
 ### Built With
 This project was built using these technologies.
