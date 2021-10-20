@@ -32,13 +32,13 @@ The details of individual food items are displayed on the show page, and the Abo
 The application throws an error when a user inputs the wrong url on the browser.
 
 ## Preview
-![Recipes](https://user-images.githubusercontent.com/57812000/109842050-493cb100-7c0f-11eb-9a93-21ee2511e433.png)
+![screenshot](./app_screenshot.png)
 
 ## Live Demo
-It's deployed [HERE](https://jaz-recipe.herokuapp.com/) on heroku
+It's deployed [HERE](https://mv-recipex-catalogue.herokuapp.com/) on heroku
 
 ## Video Presentation
-[![Presentation](https://user-images.githubusercontent.com/57812000/109846436-cf5af680-7c13-11eb-988a-e7dba7b9f511.png)](https://www.youtube.com/watch?v=)
+[![screenshot](./app_screenshot.png)](https://www.youtube.com/watch?v=)
 
 ### Built With
 This project was built using these technologies.
@@ -80,7 +80,7 @@ To get a local copy up and running follow these simple example steps.
   - Clone with GitHub CLI
   ```
     gh repo clone maosan132/Recipe-finder-with-react-redux
-    
+
  - cd to Recipes
 
 ### Setup
