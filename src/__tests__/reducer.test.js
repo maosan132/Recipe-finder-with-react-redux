@@ -1,11 +1,9 @@
-import reducer from  '../reducers/recipesReducer'
+// import reducer from  '../reducers/recipesReducer'
 
-const mock = {
-  recipes:¨{
-  / api result
-  }
-}
+// const mock = {
+//   recipes:{
+//   // api result
+//   }
+// };
 
-
-// store = mock
-
+// // store = mock
