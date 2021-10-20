@@ -28,13 +28,13 @@ describe('<About />', () => {
 
   test('it contains p element with texts', () => {
     const wrapper = shallow(<About />);
-    const para = (
+    const paragraph = (
       <p>
         Browse over 7,000 recipes. Discover quick and easy dinners, delicious
         dessert recipes, the latest food trends and more. What will you cook
         today?
       </p>
     );
-    expect(wrapper.containsMatchingElement(para)).toBe(true);
+    expect(wrapper.containsMatchingElement(paragraph)).toBe(true);
   });
 });

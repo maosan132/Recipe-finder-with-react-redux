@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import CardHeader from 'react-bootstrap/esm/CardHeader';
+import CardHeader from 'react-bootstrap/CardHeader';
 // import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
 import classes from './Recipe.module.css';
