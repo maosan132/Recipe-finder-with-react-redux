@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Form from 'react-bootstrap/Form';
+import classes from './RecipeFilter.module.css';
 
 const RecipeFilter = ({ handleFilter, recipes }) => {
   const categories = ['All']; // Start with the All category
@@ -15,30 +17,36 @@ const RecipeFilter = ({ handleFilter, recipes }) => {
 
   const handleClick = (e) => {
     const { value } = e.target;
-    handleFilter(value);
+    if (value === 'All') {
+      handleFilter(null);
+    } else {
+      handleFilter(value);
+    }
+  };
+
+  const handleClear = () => {
+    handleFilter(null);
   };
 
   return (
-    <>
-      <label htmlFor="select" className="mx-auto my-0">
-        <select
-          name="category"
+    <Form>
+      <Form.Group className="d-flex justify-content-center p-2">
+        <Form.Label htmlFor="select" className={`${classes.label} align-self-center`}>Select a category: </Form.Label>
+        <Form.Control
+          as="select"
           id="select"
           onChange={handleClick}
+          className={`${classes.input} w-25`}
         >
-          <option disable="true" hidden>
-            CATEGORY
-          </option>
-          {categories.map(
-            (category) => (
-              <option value={category} key={category}>
-                {category}
-              </option>
-            ),
-          )}
-        </select>
-      </label>
-    </>
+          {categories.map((category) => (
+            <option value={category} key={Math.random().toString(36).substr(2, 5)}>
+              {category}
+            </option>
+          ))}
+        </Form.Control>
+        <button type="button" onClick={handleClear}>Clear</button>
+      </Form.Group>
+    </Form>
   );
 };
 

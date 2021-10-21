@@ -3,9 +3,12 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Recipe from '../components/Recipe';
 import fetchRecipes from '../httpRequests/httpRequest';
-import RecipeFilter from '../components/RecipeFilter';
 import { filterRecipes } from '../actions';
+import RecipeFilter from '../components/RecipeFilter';
 import Loader from '../components/Loader';
+import CardGroup from 'react-bootstrap/CardGroup';
+import Row from 'react-bootstrap/Row';
+import classes from './Recipes.module.css'
 
 const Recipes = () => {
   const recipesData = useSelector((state) => state.recipe.meals.meals);
@@ -18,7 +21,7 @@ const Recipes = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 1000);
     dispatch(fetchRecipes());
   }, []);
 
@@ -39,9 +42,13 @@ const Recipes = () => {
   ) : (
     <div className="recipes">
       <RecipeFilter handleFilter={handleFilterChange} recipes={recipesData} />
-      {displayData.map((r) => (
-        <Recipe key={r.idMeal} recipe={r} />
-      ))}
+      <CardGroup className={classes.group}>
+        {displayData.map((r,i) => (
+          <Row xs={1} md={2} className="g-2 p-2 center" key={Math.random().toString(36).substr(2, 5)}>
+            <Recipe key={r.idMeal} recipe={r} />
+          </Row>
+        ))}
+      </CardGroup>
     </div>
   );
 

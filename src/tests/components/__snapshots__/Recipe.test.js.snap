@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Recipe /> it renders correctly 1`] = `
+<div
+  className="Card card"
+>
+  <div
+    className="card-header"
+  >
+    <div
+      className="title card-title h5"
+      data-testid="name"
+    />
+  </div>
+  <img
+    className="card-img-top"
+    data-testid="image"
+  />
+  <div
+    className="card-body"
+  >
+    <p
+      className="card-text"
+    >
+      Category: undefined
+    </p>
+    <a
+      href="/recipeInfo/undefined"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#fff",
+          "textDecoration": "none",
+        }
+      }
+    >
+      <button
+        className="button btn btn-primary"
+        disabled={false}
+        type="button"
+      >
+        Recipe Details
+      </button>
+    </a>
+  </div>
+</div>
+`;

@@ -1,0 +1,14 @@
+.label {
+  color: cadetblue;
+  font-weight: bold;
+}
+
+/* add a space after label */
+.label::after {
+  content: '\0000a0';
+}
+
+.input {
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}

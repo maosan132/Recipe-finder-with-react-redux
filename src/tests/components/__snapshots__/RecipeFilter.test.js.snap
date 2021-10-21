@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RecipeFilter /> renders correctly 1`] = `
+<form
+  className=""
+>
+  <div
+    className="d-flex justify-content-center p-2"
+  >
+    <label
+      className="label align-self-center form-label"
+      htmlFor="select"
+    >
+      Select a category: 
+    </label>
+    <select
+      className="input w-25 form-control"
+      id="select"
+      onChange={[Function]}
+    >
+      <option
+        value="All"
+      >
+        All
+      </option>
+      <option />
+    </select>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Clear
+    </button>
+  </div>
+</form>
+`;
