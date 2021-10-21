@@ -32,9 +32,14 @@ const RecipeFilter = ({ handleFilter, recipes }) => {
     <Form>
       <Form.Group className="d-flex justify-content-center p-2">
         <Form.Label htmlFor="select" className={`${classes.label} align-self-center`}>Select a category: </Form.Label>
-        <Form.Control as="select" id="select" onChange={handleClick} className={`${classes.input} w-25`}>
+        <Form.Control
+          as="select"
+          id="select"
+          onChange={handleClick}
+          className={`${classes.input} w-25`}
+        >
           {categories.map((category) => (
-            <option value={category} key={category}>
+            <option value={category} key={Math.random().toString(36).substr(2, 5)}>
               {category}
             </option>
           ))}

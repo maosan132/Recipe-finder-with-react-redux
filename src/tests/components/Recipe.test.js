@@ -7,8 +7,10 @@ import Recipe from '../../components/Recipe';
 describe('<Recipe />', () => {
   const recipe = {
     recipes: {
-      meals: [{ 0: { name: 'Recipe1', category: 'Vegetarian' } },
-        { 1: { name: 'Recipe2', category: 'Seafood' } }],
+      meals: [
+        { 0: { name: 'Recipe1', category: 'Vegetarian' } },
+        { 1: { name: 'Recipe2', category: 'Seafood' } },
+      ],
     },
   };
 
