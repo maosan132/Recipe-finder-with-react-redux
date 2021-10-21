@@ -12,12 +12,13 @@ const Recipe = ({ recipe }) => {
   return (
     <Card className={classes.Card}>
       <CardHeader>
-        <Card.Title className={classes.title}>{recipe.strMeal}</Card.Title>
+        <Card.Title className={classes.title} data-testid="name">{recipe.strMeal}</Card.Title>
       </CardHeader>
       <Card.Img
         variant="top"
         src={recipe.strMealThumb}
         alt={recipe.strMeal}
+        data-testid="image"
       />
       <Card.Body>
         <Card.Text>

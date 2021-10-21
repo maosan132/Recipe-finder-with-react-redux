@@ -15,7 +15,7 @@ const Recipes = () => {
   const filter = useSelector((state) => state.filter);
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
-  console.log(filter);
+  console.log(recipesData);
 
   const [displayData, setDisplayData] = useState([]);
 
