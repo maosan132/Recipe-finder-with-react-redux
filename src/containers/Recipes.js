@@ -15,7 +15,6 @@ const Recipes = () => {
   const filter = useSelector((state) => state.filter);
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
-  console.log(recipesData);
 
   const [displayData, setDisplayData] = useState([]);
 
@@ -43,9 +42,9 @@ const Recipes = () => {
   ) : (
     <div className="recipes">
       <RecipeFilter handleFilter={handleFilterChange} recipes={recipesData} />
-      <CardGroup class={classes.group}>
+      <CardGroup className={classes.group}>
         {displayData.map((r,i) => (
-          <Row xs={1} md={2} className="g-2 p-2 center">
+          <Row xs={1} md={2} className="g-2 p-2 center" key={Math.random().toString(36).substr(2, 5)}>
             <Recipe key={r.idMeal} recipe={r} />
           </Row>
         ))}
